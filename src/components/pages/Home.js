@@ -92,8 +92,8 @@ const Home = () => {
 
     const maxPageItem = pagination.currentPage * initPage.itemCount
     const minPageItem = maxPageItem - pagination.itemCount
-    const emptyPost = isNull(post) ? post : []
 
+    console.log(searchResMsg)
     return (
         <>
             <div className='__option'>
@@ -137,12 +137,20 @@ const Home = () => {
                 </div>
             }
             <div className='blog-container'>
-                {searchResMsg &&
+                {searchResMsg ?
                     <div className='__message-block'>
                         <header><strong>No results found</strong></header>
                         <p>
                             please dont give up, try it again or
                             <Link to={{pathname: `/post/create-new-post`, action: 'add'}}> create new post</Link>
+                        </p>
+                    </div> :
+                    data < 1  &&
+                    <div className='__message-block'>
+                        <header><strong>Your blog is empty</strong></header>
+                        <p>
+                            Start your first post now, create
+                            <Link to={{pathname: `/post/create-new-post`, action: 'add'}}> here </Link>
                         </p>
                     </div>
                 }
@@ -161,15 +169,6 @@ const Home = () => {
                     .map((x, idx) =>
                         <BlogItem key={idx} {...x} willRemovePost={willRemovePost} preview={true} />
                     )
-                }
-                {emptyPost < 1  &&
-                    <div className='__message-block'>
-                        <header><strong>Your blog is empty</strong></header>
-                        <p>
-                            Start your first post now, create
-                            <Link to={{pathname: `/post/create-new-post`, action: 'add'}}> here </Link>
-                        </p>
-                    </div>
                 }
             </div>
             {!searchResMsg &&
