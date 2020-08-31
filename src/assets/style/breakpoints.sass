@@ -1,0 +1,47 @@
+@media screen and (min-width: 600px)
+    .__option
+        display: flex
+        flex-direction: row-reverse
+
+        &> div
+            height: $dpad * 1.5
+
+        .search-container
+            width: calc(100% / 2 - #{$dpad * 4})
+            // margin-left: 0
+
+        .kemerot
+            width: calc(100% / 2 + #{$dpad})
+            padding: 0
+
+    .blog-item
+        width: calc(100% / 2 - #{$dpad})
+
+        &.view
+            width: 100%
+
+            .input-wrapper
+                input
+                    width: calc(100% / 2.5)
+        
+
+@media screen and (min-width: $maxWidth)
+    josef#josef
+        width: $maxWidth
+    .blog-item
+        width: calc(100% / 3 - #{$dpad})
+
+        &.view
+            width: 100%
+
+            .btn-grp
+                position: relative
+                width: $maxWidth
+                justify-content: flex-end
+                margin-top: $dpad
+
+                button
+                    width: 100px
+                    margin: 0
+
+                    margin-left: $dpad
