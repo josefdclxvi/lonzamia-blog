@@ -91,7 +91,7 @@ const Post = props => {
                     handleInputChange={handleInputChange}
                     handleOnFocus={handleOnFocus}
                     setRedirect={setRedirect}
-                    primBtn='Create'
+                    primBtn='Publish'
                 />
             </form>
         }

@@ -93,7 +93,6 @@ const Home = () => {
     const maxPageItem = pagination.currentPage * initPage.itemCount
     const minPageItem = maxPageItem - pagination.itemCount
 
-    console.log(searchResMsg)
     return (
         <>
             <div className='__option'>
